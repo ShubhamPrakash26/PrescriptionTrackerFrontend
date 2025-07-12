@@ -1,13 +1,15 @@
+// api.js
 import axios from 'axios';
 
 const api = axios.create({
-  baseURL: "https://prescription-tracker-backend.onrender.com",
-  withCredentials: true,
+  baseURL: "http://vipasyanadoc-001-site19.ktempurl.com",
+  withCredentials: true, // Ensure cookies are sent
   timeout: 10000,
   headers: {
     'Content-Type': 'application/json'
   }
 });
+
 
 api.interceptors.request.use(
   (config) => {

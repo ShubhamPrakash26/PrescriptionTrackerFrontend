@@ -2,7 +2,7 @@ import { useState } from "react";
 import { useAuthStore } from "../context/useAuthStore";
 import { Camera, Mail, User } from "lucide-react";
 
-const BASE_URL = "https://prescription-tracker-backend.onrender.com";
+const BASE_URL = "http://vipasyanadoc-001-site19.ktempurl.com";
 
 const ProfilePage = () => {
   const { authUser, isUpdatingProfile } = useAuthStore();
@@ -21,15 +21,15 @@ const ProfilePage = () => {
 
       try {
        const response = await fetch(`${BASE_URL}/api/updateProfileImage`, {
-        method: 'POST',
-         headers: {
-         'Content-Type': 'application/json',
-            },
-           credentials: 'include', // ← ADD THIS LINE
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          credentials: 'include', // This is correct
           body: JSON.stringify({
-           userId: authUser._id,
-           profilePic: base64Image,
-           }),
+            userId: authUser._id,
+            profilePic: base64Image,
+          }),
         });
 
 
